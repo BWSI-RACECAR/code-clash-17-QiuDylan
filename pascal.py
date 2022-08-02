@@ -34,7 +34,7 @@ class Solution:
         for n in range(rows):
             list.append([])
             list[n].append(1)
-            for m in range(1, n-1):
+            for m in range(1, n):
                 list[n].append(list[n - 1][m - 1] + list[n - 1][m])
             if(rows != 1):
                 list[n].append(1)
