@@ -32,8 +32,8 @@ class Solution:
 
         tri = [[1]]
         for _ in range(rows):
-            tri.append((x+y for x,y in zip(tri[-1] + [0],[0] + tri[-1])))
-        return tri[:rows]
+            tri.append(x+y for x,y in zip(tri[-1] + [0],[0] + tri[-1]))
+        return tri[:-rows]
 
 
 
