@@ -30,17 +30,10 @@ class Solution:
 
         # TODO: Write code below to return a nested list with the solution to the prompt
 
-        list = [] #an empty list
-        for n in range(rows):
-            
-            list[n].append([1])
-            for m in range(1, n):
-                list[n].append(list[n - 1][m - 1] + list[n - 1][m])
-            if(rows != 1):
-                list[n].append(1)
-
-        return list
-
+        tri = [[1]]
+        for _ in range(rows):
+            tri.append(x + y for x,y in zip(tri[-1] + [0],[0] + tri[-1]))
+        return tri[:rows]
 
 
 
