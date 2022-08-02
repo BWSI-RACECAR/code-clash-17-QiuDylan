@@ -33,7 +33,7 @@ class Solution:
         # type row: int
         # return type: list[list[int]]
         list=[]
-        for i in range(0, rows):
+        for i in range(1, rows):
             if i == 0:
                 list.append([1])
             elif i == 1:
