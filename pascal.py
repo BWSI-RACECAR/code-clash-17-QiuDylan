@@ -30,12 +30,22 @@ class Solution:
 
         # TODO: Write code below to return a nested list with the solution to the prompt
 
-        tri = [[1]]
-        for _ in range(rows):
-            tri.append(x+y for x,y in zip(tri[-1] + [0],[0] + tri[-1]))
-        return tri[:-rows]
-
-
+        # type row: int
+        # return type: list[list[int]]
+        list=[]
+        for i in range(0, rows):
+            if i == 0:
+                list.append([1])
+            elif i == 1:
+                list.append([1, 1])
+            else:
+                buffer = []
+                for j in range(0, len(list[i-1])-1):
+                    buffer.append(list[i-1][j] + list[i-1][j+1])
+                buffer.append(1)
+                buffer.insert(0, 1)
+                list.append(buffer)
+            pass
 
         pass
 
