@@ -24,16 +24,12 @@ Input: rows = 3 ; Output = [[1], [1, 1], [1, 2, 1]]
 """
 
 class Solution:
+    
     def pascalTri(self,rows):
         # type row: int
         # return type: list[list[int]]
-
-        # TODO: Write code below to return a nested list with the solution to the prompt
-
-        # type row: int
-        # return type: list[list[int]]
         list=[]
-        for i in range(1, rows):
+        for i in range(0, rows):
             if i == 0:
                 list.append([1])
             elif i == 1:
@@ -46,7 +42,8 @@ class Solution:
                 buffer.insert(0, 1)
                 list.append(buffer)
             pass
-
+        # TODO: Write code below to return a nested list with the solution to the prompt
+        return list
         pass
 
 def main():
